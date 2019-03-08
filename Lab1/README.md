@@ -1,1 +1,1 @@
-# ECSE222 Lab1 - 5-Bit Adder  
+# ECSE222 Lab1 - 5-bit Adder  
