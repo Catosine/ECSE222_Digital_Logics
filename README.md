@@ -1,4 +1,4 @@
-# ECSE222 Digital Logics
+# ECSE222 Digital Logics - Lab Codes  
 This is for ECSE222 labs. Mainly VHDL programming.
 
 ## Contributor
