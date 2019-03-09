@@ -11,5 +11,6 @@ This is for ECSE222 labs. Mainly VHDL programming.
 [Intel Cyclone V 5CSEMA5F31C6](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_51001.pdf)
 
 ## Updates
-> **<March 8, 2019>**  Lab1 codes uploaded.  
+> **<March 9, 2019>** Comments added to lab1 codes.  
+> **<March 8, 2019>** Lab1 codes uploaded.  
 > **<February 27, 2019>** GitHub page created.
