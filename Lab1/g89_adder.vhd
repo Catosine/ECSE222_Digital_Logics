@@ -22,25 +22,31 @@ component g89_7_segment_decoder is
 	);
 end component g89_7_segment_decoder;
 
-signal sum					:	std_logic_vector	(5 downto 0);
-signal A1_code_temp, B1_code_temp, S1_code_temp	:	std_logic_vector	(3 downto 0);
+-- Declaring sum as a 5-bit binary number to store the result of A + B
+-- Note: Add one extra digit to deal with potential arthmetic overflow
+signal sum							:	std_logic_vector	(5 downto 0);
+
+-- Declaring 3 of 4-digit binary number for the second digit of A, B, and sum
+signal A1_second_digit, B1_second_digit, S1_second_digit	:	std_logic_vector	(3 downto 0);
 
 begin
-	A1_code_temp	<=	"000" 	&	A(4);
+	A1_second_digit	<=	"000" 	&	A(4);
 
-	B1_code_temp	<=	"000" 	& 	B(4);
+	B1_second_digit	<=	"000" 	& 	B(4);
 
-	S1_code_temp	<=	"00"	&	sum(5 downto 4);
+	S1_second_digit	<=	"00"	&	sum(5 downto 4);
 	
+	-- Calculating the sum of A and B
 	sum		<=	std_logic_vector	(unsigned('0' & A) + unsigned('0' & B));
 	
+	-- Decoding the result for each display digit.
 	A0		:	g89_7_segment_decoder	port	map(	
 									code		=>	A(3 downto 0),
 									segments	=>	decoded_A(6 downto 0)
 								);
 																
 	A1		:	g89_7_segment_decoder	port	map(	
-									code		=>	A1_code_temp,
+									code		=>	A1_second_digit,
 									segments	=>	decoded_A(13 downto 7)
 								);
 																
@@ -50,7 +56,7 @@ begin
 								);
 																
 	B1		:	g89_7_segment_decoder	port	map(	
-									code		=>	B1_code_temp,
+									code		=>	B1_second_digit,
 									segments	=>	decoded_B(13 downto 7)
 								);
 																
@@ -60,7 +66,7 @@ begin
 								);
 	
 	sum1		:	g89_7_segment_decoder	port	map(	
-									code		=>	S1_code_temp,
+									code		=>	S1_second_digit,
 									segments	=>	decoded_AplusB(13 downto 7)
 								);
 																
