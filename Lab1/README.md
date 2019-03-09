@@ -16,3 +16,6 @@ This is the folder for codes of 5-bit adder lab.
 
 5) __Chain_final.cdf__  
 > This is the final chain file used to set up the uploading environment.  
+
+6) __Lab Assignment 1.pdf__  
+> This is the assignment of the lab.  
