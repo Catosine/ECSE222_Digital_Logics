@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 -- Declaring the entity of adder
 entity g89_adder is
 	Port (
-		A, B		:	in	std_logic_vector	(4 downto 0);	-- 4-bit binary inputs
+		A, B		:	in	std_logic_vector	(4 downto 0);	-- 5-bit binary inputs
 		decoded_A	:	out	std_logic_vector	(13 downto 0);	-- 14-bit binary output, used for display
 		decoded_B	:  	out	std_logic_vector	(13 downto 0);	-- 14-bit binary output, used for display
 		decoded_AplusB	:	out 	std_logic_vector	(13 downto 0)	-- 14-bit binary output, used for display
@@ -15,6 +15,8 @@ end g89_adder;
 -- Declaring the architecture of the adder
 architecture behaviour of g89_adder is
 
+-- Declaring the previously defined design entity, g89_7_segment_decoder, as a component
+-- Note: it must match the corresponding entity declaration 
 component g89_7_segment_decoder is
 	Port (
 		code		:	in	std_logic_vector	(3 downto 0);
@@ -22,11 +24,12 @@ component g89_7_segment_decoder is
 	);
 end component g89_7_segment_decoder;
 
--- Declaring sum as a 5-bit binary number to store the result of A + B
+-- Declaring sum as a 6-bit binary number to store the result of A + B
 -- Note: Add one extra digit to deal with potential arthmetic overflow
 signal sum							:	std_logic_vector	(5 downto 0);
 
--- Declaring 3 of 4-digit binary number for the second digit of A, B, and sum
+-- Declaring 3 of 4-digit binary number for the second digit of A, B
+-- Declaring S1 as a 4-digit binary number for the last two digits from the sum of A + B
 signal A1_second_digit, B1_second_digit, S1_second_digit	:	std_logic_vector	(3 downto 0);
 
 begin
@@ -39,7 +42,8 @@ begin
 	-- Calculating the sum of A and B
 	sum		<=	std_logic_vector	(unsigned('0' & A) + unsigned('0' & B));
 	
-	-- Decoding the result for each display digit.
+	-- Instantiating 6 instances of the component, g89_7_segment_decoder
+	-- Decoding the result for each display digit
 	A0		:	g89_7_segment_decoder	port	map(	
 									code		=>	A(3 downto 0),
 									segments	=>	decoded_A(6 downto 0)
