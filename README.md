@@ -6,6 +6,7 @@ This is for ECSE222 labs. Mainly VHDL programming.
 
 ## List of Contents  
 [Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab1)  
+[Lab2 - Sequential Circuits](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab2)  
 
 ## Hardware
 [Intel Cyclone V 5CSEMA5F31C6](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_51001.pdf)
