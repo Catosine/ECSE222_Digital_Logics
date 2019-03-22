@@ -12,7 +12,7 @@ end g89_clock_divider;
 
 architecture down_counter of g89_clock_divider is
 	signal temp		:	std_logic;									-- record current state
-	signal counter	:	integer range 2499 to 0 := 2499;		-- 
+	signal counter	:	integer range 0 to 2499 := 2499;		-- 
 begin
    process(enable, reset, clk)
 	begin
