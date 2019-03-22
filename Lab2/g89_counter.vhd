@@ -11,7 +11,7 @@ entity g89_counter is
 end g89_counter;
 
 architecture up_counter of g89_counter is
-	signal c		 :		std_logic_vector	  (3	downto	0)	:=	(others => '0');
+	signal c	:	std_logic_vector	(3 downto 0)	:=	(others => '0');
 begin
    	process(enable, reset, clk)
 	begin																			
