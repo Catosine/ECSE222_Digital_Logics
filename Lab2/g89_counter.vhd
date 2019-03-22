@@ -15,7 +15,7 @@ architecture up_counter of g89_counter is
 begin
    	process(enable, reset, clk)
 	begin																			
-	if (reset = '1') then 						-- reset counter
+	if (reset = '0') then 						-- reset counter
 		c <= (others => '0');
 	elsif (rising_edge(clk)) then					-- activate counter
 		if (enable = '1') then					-- enable counter
