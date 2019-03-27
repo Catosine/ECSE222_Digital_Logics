@@ -48,22 +48,22 @@ begin
 									code		=>	A(3 downto 0),
 									segments	=>	decoded_A(6 downto 0)
 								);
-																
+
 	A1		:	g89_7_segment_decoder	port	map(	
 									code		=>	A1_second_digit,
 									segments	=>	decoded_A(13 downto 7)
 								);
-																
+	
 	B0		:	g89_7_segment_decoder	port	map(	
 									code		=>	B(3 downto 0),
 									segments	=>	decoded_B(6 downto 0)
 								);
-																
+	
 	B1		:	g89_7_segment_decoder	port	map(	
 									code		=>	B1_second_digit,
 									segments	=>	decoded_B(13 downto 7)
 								);
-																
+	
 	sum0		:	g89_7_segment_decoder	port	map(	
 									code		=>	sum(3 downto 0),
 									segments	=>	decoded_AplusB(6 downto 0)
@@ -73,7 +73,4 @@ begin
 									code		=>	S1_second_digit,
 									segments	=>	decoded_AplusB(13 downto 7)
 								);
-																
 end behaviour; 
-																																																																																																														
-					
