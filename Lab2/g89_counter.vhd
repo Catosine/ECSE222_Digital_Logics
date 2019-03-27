@@ -14,7 +14,7 @@ architecture up_counter of g89_counter is
 	signal c	:	std_logic_vector	(3 downto 0)	:=	(others => '0');
 begin
    	process(enable, reset, clk)
-	begin																			
+	begin																
 	if (reset = '0') then 						-- reset counter
 		c <= (others => '0');
 	elsif (rising_edge(clk)) then					-- activate counter
