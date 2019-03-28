@@ -6,7 +6,7 @@ entity g89_clock_divider is
        enable	:	in  	std_logic;			-- divider will only work when enable is 1
        reset   	:  	in  	std_logic;			-- divider will be reset when reset is 0
        clk     	:  	in  	std_logic;			-- divider will start everytime at the rising edge of clk
-       en_out  	:  		out std_logic			-- result
+       en_out  	:  	out 	std_logic			-- result
    );
 end g89_clock_divider;
 
