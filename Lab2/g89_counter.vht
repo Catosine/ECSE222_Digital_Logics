@@ -64,26 +64,29 @@ END PROCESS always;
 
 generate_test : PROCESS
 BEGIN
-	
+	-- reset counter
 	reset <= '0';
 	
 	WAIT FOR 10 ns;
 	
+	-- initialize
 	clk <= '0';
 	enable <= '1';
 	reset <= '1';
 	
-	-- Test normal counter with enable = 1 
+	-- enable = '1', reset = '1' 
+	-- it will counter upward.
 	FOR i IN 0 to 31 LOOP
 		clk <= '0';
 		WAIT FOR 10 ns;
 		clk <= '1';
 		WAIT FOR 10 ns;
 	END LOOP;
-	--WAIT;
 	
 	WAIT FOR 100 ns;
 	
+	-- reset = '0'
+	-- there will be no counting.
 	reset <= '0';
 	FOR i IN 0 to 25 LOOP
 		clk <= '0';
@@ -91,13 +94,13 @@ BEGIN
 		clk <= '1';
 		WAIT FOR 10 ns;
 	END LOOP;
-	--WAIT;
 	
 	WAIT FOR 100 ns;
 	
+	-- reset = '1', enable = '0'
+	-- there will be no counting.
 	reset <= '1';
 	enable <= '0';
-	
 	FOR i IN 0 to 31 LOOP
 		clk <= '0';
 		WAIT FOR 10 ns;
