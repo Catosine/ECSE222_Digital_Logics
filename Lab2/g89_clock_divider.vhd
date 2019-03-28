@@ -11,18 +11,18 @@ entity g89_clock_divider is
 end g89_clock_divider;
 
 architecture down_counter of g89_clock_divider is
-	signal temp		:	std_logic;								-- current state
-	signal counter		:	std_logic_vector (18 downto 0) := std_logic_vector(unsigned(499999));	-- output 1 every after 500,000 times of clock
+	signal temp		:	std_logic;							-- current state
+	signal counter		:	std_logic_vector (18 downto 0) := "1111010000100011111";	-- output 1 every after 500,000 times of clock
 begin
    	process(enable, reset, clk)
 	begin
    	if (reset = '1') then
 		temp 	<=	'0';
-		counter <= 	std_logic_vector(unsigned(499999));
+		counter <= 	"1111010000100011111";
 	elsif (rising_edge(clk)) then
 		if (counter = "0000000000000000000") then
 			temp	<=	'1';
-			counter	<=	std_logic_vector(unsigned(499999));
+			counter	<=	"1111010000100011111";
 		else
 			if (enable = '1') then
 				temp 	<= 	'0';
