@@ -1,4 +1,4 @@
-# ECSE222 Lab1 - 5-bit Adder  
+# [ECSE222 Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Lab%20Assignment%201.pdf)  
 This is the folder for codes of 5-bit adder lab.  
 
 # List of Contents  
@@ -17,6 +17,3 @@ This is the folder for codes of 5-bit adder lab.
 
 5) [__Chain_final.cdf__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Chain_final.cdf)  
 > This is the final chain file used to set up the uploading environment.  
-
-6) [__Lab Assignment 1.pdf__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Lab%20Assignment%201.pdf)  
-> This is the assignment of the lab.  
