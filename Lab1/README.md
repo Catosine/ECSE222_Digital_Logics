@@ -1,5 +1,5 @@
 # [ECSE222 Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Lab%20Assignment%201.pdf)  
-This is the folder for codes of 5-bit adder lab.  
+This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder and a 4-bit hexdecimal adder is implemented.  
 
 # List of Contents  
 1) [__g89_7_segment_decoder.vhd__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/code/g89_7_segment_decoder.vhd)  
