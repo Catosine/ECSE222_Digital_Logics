@@ -8,3 +8,4 @@ This is the folder for codes of sequential circuits lab.
 
 2) [__g89_clock_divider.vhd__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/g89_clock_divider.vhd)  
 > This VHDL file implements a clock divider which adjusts the clock speed from 50MHz to 10Hz.  
+> Partial correctness checked. [Testing codes](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/g89_clock_divider.vht)  
