@@ -64,15 +64,17 @@ END PROCESS always;
 
 generate_test : PROCESS
 BEGIN
-
+	-- reset divider
 	reset <= '0';
 	
 	WAIT FOR 10 ns;
 	
+	-- initialize divider
 	clk <= '0';
 	enable <= '1';
 	reset <= '1';
 	
+	-- test
 	FOR i IN 0 to 50000000 LOOP
 		clk <= '0';
 		WAIT FOR 20 ns;
