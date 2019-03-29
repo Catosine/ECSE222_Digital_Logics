@@ -13,7 +13,7 @@ This is for ECSE222 labs. Mainly VHDL programming.
 
 ## Updates
 > **<March 29, 2019>**  
->> Uploaded clock divider for lab2;  
+>> Uploaded clock divider for lab2.  
 >> Implemented and uploaded testers for both up counter and clock divider. Also checked the correctness of them using the testers.    
 >> Uploaded/updated RTL diagram for both up counter and clock divider. 
 
