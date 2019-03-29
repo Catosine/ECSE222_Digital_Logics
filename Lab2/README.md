@@ -1,4 +1,4 @@
-# ECSE222 Lab1 - Sequential Circuits  
+# [ECSE222 Lab1 - Sequential Circuits](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/Lab%20assignment%202.pdf)  
 This is the folder for codes of sequential circuits lab.  
 
 # List of Contents  
