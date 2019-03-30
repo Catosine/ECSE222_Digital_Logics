@@ -4,22 +4,22 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity g89_stopwatch is
     Port(
-        start       :   in  std_logic;                      -- stopwatch will be started
-        stop        :   in  std_logic;                      -- stopwatch will be stoped
-        reset       :   in  std_logic;                      -- stopwatch will be reset
-        clk         :   in  std_logic;                      -- 50MHz clock
+        start       :   in  std_logic;                      	-- stopwatch will be started
+        stop        :   in  std_logic;                      	-- stopwatch will be stoped
+        reset       :   in  std_logic;                      	-- stopwatch will be reset
+        clk         :   in  std_logic;                      	-- 50MHz clock
         
         -- centisecond
-        HEX0        :   out std_logic_vector(6 downto 0);   -- centisecond digit 1
-        HEX1        :   out std_logic_vector(6 downto 0);   -- centisecond digit 2
+        HEX0        :   out std_logic_vector(6 downto 0);   	-- centisecond digit 1
+        HEX1        :   out std_logic_vector(6 downto 0);   	-- centisecond digit 2
         
         -- second = 100 centiseconds
-        HEX2        :   out std_logic_vector(6 downto 0);   -- second digit 1
-        HEX3        :   out std_logic_vector(6 downto 0);   -- second digit 2
+        HEX2        :   out std_logic_vector(6 downto 0);   	-- second digit 1
+        HEX3        :   out std_logic_vector(6 downto 0);   	-- second digit 2
         
         -- minute = 60 seconds
-        HEX4        :   out std_logic_vector(6 downto 0);   -- minute digit 1
-        HEX5        :   out std_logic_vector(6 downto 0)    -- minute digit 2
+        HEX4        :   out std_logic_vector(6 downto 0);   	-- minute digit 1
+        HEX5        :   out std_logic_vector(6 downto 0)    	-- minute digit 2
     );
 end g89_stopwatch;
 
@@ -28,19 +28,19 @@ architecture stopwatch of g89_stopwatch is
 -- clock divider
 component g89_clock_divider is
     Port (
-        enable      :   in  std_logic;						-- divider will only work when enable is 1
-        reset       :   in  std_logic;						-- divider will be reset when reset is 0
-        clk         :   in  std_logic;						-- divider will start everytime at the rising edge of clk
-        en_out      :   out std_logic						-- result
+        enable      :   in  std_logic;				-- divider will only work when enable is 1
+        reset       :   in  std_logic;				-- divider will be reset when reset is 0
+        clk         :   in  std_logic;				-- divider will start everytime at the rising edge of clk
+        en_out      :   out std_logic				-- result
     );
 end component g89_clock_divider;
 
 -- counter
 component g89_counter is
     Port (
-        enable      :   in  std_logic;                      -- counter will only work when enable is 1
-        reset       :   in  std_logic;                      -- counter will be reset when reset is 0
-        clk         :   in  std_logic;                      -- counter will start everytime at the rising edge of clk
+        enable      :   in  std_logic;                      	-- counter will only work when enable is 1
+        reset       :   in  std_logic;                      	-- counter will be reset when reset is 0
+        clk         :   in  std_logic;                      	-- counter will start everytime at the rising edge of clk
         count       :   out std_logic_vector(3  downto  0)	-- counting result
     );
 end component g89_counter;
@@ -48,7 +48,7 @@ end component g89_counter;
 -- 7 segment decoder
 component g89_7_segment_decoder is
     Port (
-		code 	    :   in 	std_logic_vector(3 downto 0);	-- 4-bit binary input
+	code 	    :   in 	std_logic_vector(3 downto 0);	-- 4-bit binary input
       	segments    :   out std_logic_vector(6 downto 0)	-- 7-bit binary output
 	);
 end component g89_7_segment_decoder;
