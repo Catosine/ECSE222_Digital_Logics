@@ -79,31 +79,31 @@ begin
     
     -- HEX1
     enable1     <= start * (counter_result0 >= "1010");
-    reset1      <= NOT(STOP + (counter_result1 >= "1010") + reset)
+    reset1      <= NOT(STOP + (counter_result1 >= "1010") + reset);
     counter1    : g89_counter           port map(enable=>enable1, reset=>reset1, clk=>low_freq_clk, count=>counter_result1);
     counter1    : g89_7_segment_decoder port map(code=>counter_result1, segments=>HEX1);
 
     -- HEX2
     enable2     <= start * (counter_result1 >= "1010");
-    reset2      <= NOT(STOP + (counter_result2 >= "1010") + reset)
+    reset2      <= NOT(STOP + (counter_result2 >= "1010") + reset);
     counter2    : g89_counter           port map(enable=>enable2, reset=>reset2, clk=>low_freq_clk, count=>counter_result2);
     counter2    : g89_7_segment_decoder port map(code=>counter_result2, segments=>HEX2);
     
     -- HEX3
     enable3     <= start * (counter_result2 >= "1010");
-    reset3      <= NOT(STOP + (counter_result3 >= "1010") + reset)
+    reset3      <= NOT(STOP + (counter_result3 >= "1010") + reset);
     counter3    : g89_counter           port map(enable=>enable3, reset=>reset3, clk=>low_freq_clk, count=>counter_result3);
     counter3    : g89_7_segment_decoder port map(code=>counter_result3, segments=>HEX3);
     
     -- HEX4
     enable4     <= start * (counter_result3 >= "1010");
-    reset4      <= NOT(STOP + (counter_result4 >= "1010") + reset)
+    reset4      <= NOT(STOP + (counter_result4 >= "1010") + reset);
     counter4    : g89_counter           port map(enable=>enable4, reset=>reset4, clk=>low_freq_clk, count=>counter_result4);
     counter4    : g89_7_segment_decoder port map(code=>counter_result4, segments=>HEX4);
     
     -- HEX5
     enable5     <= start * (counter_result4 >= "1010");
-    reset5      <= NOT(STOP + (counter_result5 >= "1010") + reset)
+    reset5      <= NOT(STOP + (counter_result5 >= "1010") + reset);
     counter5    : g89_counter           port map(enable=>enable5, reset=>reset5, clk=>low_freq_clk, count=>counter_result5);
     counter5    : g89_7_segment_decoder port map(code=>counter_result5, segments=>HEX5);
 
