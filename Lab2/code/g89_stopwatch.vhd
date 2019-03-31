@@ -61,9 +61,10 @@ component g89_7_segment_decoder is
 				);
 end component g89_7_segment_decoder;
 
-signal clkStart, enD0, enC0, enc1, enC2, enC3, enC4, enC5, enC6		      : std_logic;
-signal reset0, reset1, reset2, reset3, reset4, reset5						: std_logic;
-signal count0, count1, count2, count3, count4, count5  					: std_logic;
+signal clkStart																: std_logic := '0';
+signal enD0, enC0, enc1, enC2, enC3, enC4, enC5, enC6		      : std_logic;
+signal reset0, reset1, reset2, reset3, reset4, reset5				: std_logic;
+signal count0, count1, count2, count3, count4, count5  			: std_logic_vector (3 downto 0) := "0000";
 
 begin 
 
@@ -73,59 +74,115 @@ clk_div 	: g89_clock_divider	port map( enable => clkStart,
 													 en_out => enD0);
 
 counter0 : g89_counter	port map( enable => enC0,
-											 reset  => rest0,
+											 reset  => reset0,
 											 clk    => clk,
 											 count  => count0);
 											 
 counter1 : g89_counter	port map( enable => enC1,
-											 reset  => rest1,
+											 reset  => reset1,
 											 clk    => clk,
 											 count  => count1);
 
 counter2 : g89_counter	port map( enable => enC2,
-											 reset  => rest2,
+											 reset  => reset2,
 											 clk    => clk,
 											 count  => count2);
 											 
 counter3 : g89_counter	port map( enable => enC3,
-											 reset  => rest3,
+											 reset  => reset3,
 											 clk    => clk,
 											 count  => count3);	
 											 
 counter4 : g89_counter	port map( enable => enC4,
-											 reset  => rest4,
+											 reset  => reset4,
 											 clk    => clk,
 											 count  => count4);
 											 
 counter5 : g89_counter	port map( enable => enC5,
-											 reset  => rest5,
+											 reset  => reset5,
 											 clk    => clk,
 											 count  => count5);
 											 
-C5			: g89_7_segement_decoder port map( code => count5,
-														  segment => HEX5);
+C5			: g89_7_segment_decoder port map( code => count5,
+														  segments => HEX5);
 														  
-C4			: g89_7_segement_decoder port map( code => count4,
-														  segment => HEX4);
+C4			: g89_7_segment_decoder port map( code => count4,
+														  segments => HEX4);
 														
-C3			: g89_7_segement_decoder port map( code => count3,
-														  segment => HEX3);
+C3			: g89_7_segment_decoder port map( code => count3,
+														  segments => HEX3);
 														  
-C2			: g89_7_segement_decoder port map( code => count2,
-														  segment => HEX2);	
+C2			: g89_7_segment_decoder port map( code => count2,
+														  segments => HEX2);	
 
-C1			: g89_7_segement_decoder port map( code => count1,
-														  segment => HEX1);
+C1			: g89_7_segment_decoder port map( code => count1,
+														  segments => HEX1);
 														  
-C0			: g89_7_segement_decoder port map( code => count0,
-														  segment => HEX0);													  
-											 
+C0			: g89_7_segment_decoder port map( code => count0,
+														  segments => HEX0);													  
+
+														  
 process (start, stop, reset, clk)
-Begin 
-if start = '0' then
+sBegin 
+
+if (start = '0' and clkStart = '0') then
 	clkStart <= '1';
-elsif stop = '0' then 
+end if;
+
+if (stop = '0') then 
+	clkStart <= '0';
+	enC0 <= '0';
+	enC1 <= '0';
+	enC2 <= '0';
+	enC3 <= '0';
+	enC4 <= '0';
+	enC5 <= '0';
+elsif (enD0 = '1' and clkStart = '1') then
+	enC0 <= '1';
+	if (count0 >= "1010") then
+		enC1 <= '1';
+		reset0 <= '0';
+	end if;
 	
+	if (count1 >= "1010") then
+		enC2 <= '1';
+		reset1 <= '0';
+	end if;
+	
+	
+	if (count2 >= "1010") then 
+		enC3 <= '1'; 
+		reset2 <= '0';
+	end if;
+	
+	if (count3 >= "0101") then 
+		enC4 <= '1';
+		reset3 <= '0';
+	end if;
+	
+	if (count4 >= "1010") then 
+		enC5 <= '1';
+		reset4 <= '0';
+	end if;
+	
+	if (count5 >= "1010") then 
+		clkStart <= '0';
+	end if;
+end if;
+
+if (reset = '0') then
+	clkStart <= '0';
+	reset0 <= '0';
+	reset1 <= '0';
+	reset2 <= '0';
+	reset3 <= '0';
+	reset4 <= '0';
+	reset5 <= '0';
+end if;
+
+end process;
+
+end behaviour;	
 	
 				 
 				 
