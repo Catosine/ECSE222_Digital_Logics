@@ -61,17 +61,17 @@ component g89_7_segment_decoder is
 				);
 end component g89_7_segment_decoder;
 
-signal clkStart																: std_logic := '0';
-signal enD0, enC0, enc1, enC2, enC3, enC4, enC5, enC6		      : std_logic;
-signal reset0, reset1, reset2, reset3, reset4, reset5				: std_logic;
+signal enD_in																   : std_logic := '0';
+signal enD_out, enC0, enc1, enC2, enC3, enC4, enC5, enC6		   : std_logic := '0';
+signal reset0, reset1, reset2, reset3, reset4, reset5				: std_logic := '1';
 signal count0, count1, count2, count3, count4, count5  			: std_logic_vector (3 downto 0) := "0000";
 
 begin 
 
-clk_div 	: g89_clock_divider	port map( enable => clkStart,
+clk_div 	: g89_clock_divider	port map( enable => enD_in,
 													 reset  => reset,
 													 clk 	  => clk,
-													 en_out => enD0);
+													 en_out => enD_out);
 
 counter0 : g89_counter	port map( enable => enC0,
 											 reset  => reset0,
@@ -123,55 +123,74 @@ C0			: g89_7_segment_decoder port map( code => count0,
 
 														  
 process (start, stop, reset, clk)
-sBegin 
+Begin 
 
-if (start = '0' and clkStart = '0') then
-	clkStart <= '1';
+if (rising_edge(clk)) then 
+
+	if (start = '0') then
+		enD_in <= '1';	
+	end if;
+
+	if (stop = '0') then 
+		enD_in <= '0';
+		enC0 <= '0';
+		enC1 <= '0';
+		enC2 <= '0';
+		enC3 <= '0';
+		enC4 <= '0';
+		enC5 <= '0';
+	elsif (enD_out = '1') then	
+		enC0 <= '1';
+		if (count0 = "1010") then
+			enC1 <= '1';
+			reset0 <= '0';
+		else 
+			enC1 <= '0';
+			reset0 <= '1';
+		end if;
+		
+	
+		if (count1 = "1010") then
+			enC2 <= '1';
+			reset1 <= '0';
+		else 
+			enC2 <= '0';
+			reset1 <= '1';
+		end if;
+	
+	
+		if (count2 = "1010") then 
+			enC3 <= '1'; 
+			reset2 <= '0';
+		else 
+			enC3 <= '0';
+			reset2 <= '1';
+		end if;
+		
+		if (count3 = "0101") then 
+			enC4 <= '1';
+			reset3 <= '0';
+		else 
+			enC4 <= '0';
+			reset3 <= '1';
+		end if;
+	
+		if (count4 = "1010") then 
+			enC5 <= '1';
+			reset4 <= '0';
+		else 
+			enC5 <= '0';
+			reset4 <= '1';
+		end if;
+	
+		if (count5 >= "1010") then 
+			enD_in <= '0';
+		end if;
+	end if;
 end if;
-
-if (stop = '0') then 
-	clkStart <= '0';
-	enC0 <= '0';
-	enC1 <= '0';
-	enC2 <= '0';
-	enC3 <= '0';
-	enC4 <= '0';
-	enC5 <= '0';
-elsif (enD0 = '1' and clkStart = '1') then
-	enC0 <= '1';
-	if (count0 >= "1010") then
-		enC1 <= '1';
-		reset0 <= '0';
-	end if;
 	
-	if (count1 >= "1010") then
-		enC2 <= '1';
-		reset1 <= '0';
-	end if;
-	
-	
-	if (count2 >= "1010") then 
-		enC3 <= '1'; 
-		reset2 <= '0';
-	end if;
-	
-	if (count3 >= "0101") then 
-		enC4 <= '1';
-		reset3 <= '0';
-	end if;
-	
-	if (count4 >= "1010") then 
-		enC5 <= '1';
-		reset4 <= '0';
-	end if;
-	
-	if (count5 >= "1010") then 
-		clkStart <= '0';
-	end if;
-end if;
-
 if (reset = '0') then
-	clkStart <= '0';
+	enD_in <= '0';
 	reset0 <= '0';
 	reset1 <= '0';
 	reset2 <= '0';
