@@ -19,15 +19,13 @@ begin
    	if (reset = '0') then					-- reset divider
 		temp 	<= 	'0';
 		counter <= 	"1111010000100011111";
-	elsif (rising_edge(clk)) then				-- activate divider
-		if (enable = '1') then			-- divide as usual
-			if (counter = "0000000000000000000") then	-- output 1 as divided enable signal
-				temp	<=	'1';
-				counter	<=	"1111010000100011111";
-			else
-				temp	<=	'0';
-				counter <= 	std_logic_vector(unsigned(counter)-1);
-			end if;
+	elsif (rising_edge(clk) AND enable = '1') then		-- activate divider
+		if (counter = "0000000000000000000") then	-- output 1 as divided enable signal
+			temp	<=	'1';
+			counter	<=	"1111010000100011111";
+		else
+			temp	<=	'0';
+			counter <= 	std_logic_vector(unsigned(counter)-1);
 		end if;
 	end if;
    	end process;
