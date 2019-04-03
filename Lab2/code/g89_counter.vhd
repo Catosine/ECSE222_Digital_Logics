@@ -17,13 +17,11 @@ begin
 	begin																
 	if (reset = '0') then 						-- reset counter
 		c <= (others => '0');
-	elsif (rising_edge(clk)) then					-- activate counter
-		if (enable = '1') then					-- enable counter
-			if (c = "1111") then 				-- restart
-				c <= (others => '0');							
-			else
-				c <= std_logic_vector(unsigned(c)+1);	-- count as usual
-			end if;
+	elsif (rising_edge(clk) AND enable = '1') then			-- activate counter
+		if (c = "1111") then 					-- restart
+			c <= (others => '0');							
+		else
+			c <= std_logic_vector(unsigned(c)+1);		-- count as usual
 		end if;
 	end if;
 	end process;
