@@ -61,8 +61,8 @@ component g89_7_segment_decoder is
 				);
 end component g89_7_segment_decoder;
 
-signal enD_in																   : std_logic := '0';
-signal enD_out, enC0, enc1, enC2, enC3, enC4, enC5, enC6		   : std_logic := '0';
+signal enD_in, enD_out													   : std_logic := '0';
+signal enC0, enc1, enC2, enC3, enC4, enC5, enC6		            : std_logic := '0';
 signal reset0, reset1, reset2, reset3, reset4, reset5				: std_logic := '1';
 signal count0, count1, count2, count3, count4, count5  			: std_logic_vector (3 downto 0) := "0000";
 
@@ -73,7 +73,7 @@ clk_div 	: g89_clock_divider	port map( enable => enD_in,
 													 clk 	  => clk,
 													 en_out => enD_out);
 
-counter0 : g89_counter	port map( enable => enC0,
+counter0 : g89_counter	port map( enable => enD_out,
 											 reset  => reset0,
 											 clk    => clk,
 											 count  => count0);
@@ -139,65 +139,69 @@ if (rising_edge(clk)) then
 		enC3 <= '0';
 		enC4 <= '0';
 		enC5 <= '0';
-	elsif (enD_out = '1') then	
-		enC0 <= '1';
-		if (count0 = "1010") then
-			enC1 <= '1';
-			reset0 <= '0';
-		else 
-			enC1 <= '0';
-			reset0 <= '1';
-		end if;
+	end if;
+	
+--	if (enD_out = '1') then
+--		enC0 <= '1';
+--	end if;
+	
+	if (count0 = "1010") then
+		enC1 <= '1';
+		reset0 <= '0';
+	else 
+		enC1 <= '0';
+		reset0 <= '1';
+	end if;
+			
+   if (count1 = "1010") then
+		enC2 <= '1';
+		reset1 <= '0';
+	else 
+		enC2 <= '0';
+		reset1 <= '1';
+	end if;
+	
+	
+	if (count2 = "1010") then 
+		enC3 <= '1'; 
+		reset2 <= '0';
+	else 
+		enC3 <= '0';
+		reset2 <= '1';
+	end if;
 		
+	if (count3 = "0110") then 
+		enC4 <= '1';
+		reset3 <= '0';
+	else 
+		enC4 <= '0';
+		reset3 <= '1';
+	end if;
 	
-		if (count1 = "1010") then
-			enC2 <= '1';
-			reset1 <= '0';
-		else 
-			enC2 <= '0';
-			reset1 <= '1';
-		end if;
+	if (count4 = "1010") then 
+		enC5 <= '1';
+		reset4 <= '0';
+	else 
+		enC5 <= '0';
+		reset4 <= '1';
+	end if;
 	
-	
-		if (count2 = "1010") then 
-			enC3 <= '1'; 
-			reset2 <= '0';
-		else 
-			enC3 <= '0';
-			reset2 <= '1';
-		end if;
-		
-		if (count3 = "0101") then 
-			enC4 <= '1';
-			reset3 <= '0';
-		else 
-			enC4 <= '0';
-			reset3 <= '1';
-		end if;
-	
-		if (count4 = "1010") then 
-			enC5 <= '1';
-			reset4 <= '0';
-		else 
-			enC5 <= '0';
-			reset4 <= '1';
-		end if;
-	
-		if (count5 >= "1010") then 
-			enD_in <= '0';
-		end if;
+	if (count5 = "0110") then 
+		reset5 <= '0';
+	else 
+		reset5 <= '1';
 	end if;
 end if;
-	
+
 if (reset = '0') then
-	enD_in <= '0';
 	reset0 <= '0';
 	reset1 <= '0';
-	reset2 <= '0';
-	reset3 <= '0';
-	reset4 <= '0';
+   reset2 <= '0';
+   reset3 <= '0';
+   reset4 <= '0';
 	reset5 <= '0';
 end if;
+
 
 end process;
 
