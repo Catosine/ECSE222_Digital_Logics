@@ -1,7 +1,7 @@
 # [ECSE222 Lab2 - Sequential Circuits](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/Lab%20assignment%202.pdf)  
 This is the folder for codes of sequential circuits lab.  
 
-# List of Contents  
+## List of Contents  
 1) [__g89_counter.vhd__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/g89_counter.vhd)  
 > This VHDL file implements a 4-bit up-counter with a negative-triggered reset and a positive-triggered enable.  
 > Correctness checked. [Testing codes](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/g89_counter.vht)  
