@@ -2,7 +2,7 @@
 This is for ECSE222 labs. Mainly VHDL programming.
 
 ## Contributors
-[Pengnan](https://github.com/Catosine) and [Grace](https://github.com/schen136)
+Any questions? Please contact with [Pengnan](https://github.com/Catosine) and [Grace](https://github.com/schen136)
 
 ## List of Contents  
 [Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab1)  
