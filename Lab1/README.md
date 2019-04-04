@@ -14,6 +14,3 @@ This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder a
 
 4) [__g89_lab1.sof__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/g89_lab1.sof)  
 > This is the result of compling all files above. It is used when uploading codes to the development board.  
-
-5) [__Chain_final.cdf__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Chain_final.cdf)  
-> This is the final chain file used to set up the uploading environment.  
