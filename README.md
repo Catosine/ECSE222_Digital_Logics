@@ -7,11 +7,13 @@ This is for ECSE222 labs. Mainly VHDL programming.
 ## List of Contents  
 [Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab1)  
 [Lab2 - Sequential Circuits](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab2)  
+[Lab3 - Finite State Machine](https://github.com/Catosine/ECSE222_Digital_Logics/tree/master/Lab3)  
 
 ## Hardware
 [DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
 ## Updates
+> **<April 4, 2019>** Create folder for lab3.  
 > **<April 3, 2019>**
 >> Finished all codes for lab2.  
 >> Uploaded RTL diagram for stopwatch.  
