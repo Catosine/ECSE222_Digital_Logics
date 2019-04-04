@@ -9,7 +9,7 @@ This is for ECSE222 labs. Mainly VHDL programming.
 [Lab2 - Sequential Circuits](https://github.com/Catosine/ECSE222---VHDL/tree/master/Lab2)  
 
 ## Hardware
-[Intel Cyclone V 5CSEMA5F31C6](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_51001.pdf)
+[DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
 ## Updates
 > **<March 29, 2019>**  
