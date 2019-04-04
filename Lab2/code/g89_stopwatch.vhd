@@ -21,9 +21,9 @@ end g89_stopwatch;
 architecture behaviour of g89_stopwatch is 
 
 component g89_counter is
-	Port    (	enable  	:   	in  std_logic;                      -- counter will only work when enable is 1
-        		reset   	:   	in  std_logic;                      -- counter will be reset when reset is 0
-        		clk     	:   	in  std_logic;                      -- counter will start a change everytime when clk is 1
+	Port    (	enable  	:   	in  std_logic;                      	-- counter will only work when enable is 1
+        		reset   	:   	in  std_logic;                      	-- counter will be reset when reset is 0
+        		clk     	:   	in  std_logic;                      	-- counter will start a change everytime when clk is 1
         		count   	:   	out std_logic_vector (3 downto 0)	-- counting result
 	);
 end component g89_counter;
