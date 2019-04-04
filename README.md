@@ -14,6 +14,7 @@ This is for ECSE222 labs. Mainly VHDL programming.
 
 ## Updates
 > **<April 4, 2019>** Create folder for lab3.  
+
 > **<April 3, 2019>**
 >> Finished all codes for lab2.  
 >> Uploaded RTL diagram for stopwatch.  
