@@ -12,6 +12,11 @@ This is for ECSE222 labs. Mainly VHDL programming.
 [DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
 ## Updates
+> **<April 3, 2019>**
+>> Finished all codes for lab2.  
+>> Uploaded RTL diagram for stopwatch.  
+>> Uploaded simulation results for up counter and clock divider.  
+
 > **<March 29, 2019>**  
 >> Uploaded clock divider for lab2.  
 >> Implemented and uploaded testers for both up counter and clock divider. Also checked the correctness of them using the testers.    
