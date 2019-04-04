@@ -3,3 +3,5 @@
 ## List of Contents
 1. [**__g89_multi_mode_counter.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_multi_mode_counter.vhd)  
 2. [**__g89_FSM.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_FSM.vhd)
+3. [**__g89_clock_divider.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_clock_divider.vhd)  
+4. [**__g89_7_segment_decoder.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_7_segment_decoder.vhd)
