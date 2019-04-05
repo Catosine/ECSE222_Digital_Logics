@@ -1,5 +1,5 @@
 # [ECSE222 Lab1 - 5-bit Adder](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/Lab%20Assignment%201.pdf)  
-This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder and a 4-bit hexdecimal adder is implemented.  
+This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder and a 4-bit hexdecimal adder is described using VHDL.  
 
 ## List of Contents  
 1) [__g89_7_segment_decoder.vhd__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/code/g89_7_segment_decoder.vhd)  
@@ -13,4 +13,4 @@ This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder a
 > This is the CSV file that indicates the pin assignment.  
 
 4) [__g89_lab1.sof__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/g89_lab1.sof)  
-> This is the result of compling all files above. It is used when uploading codes to the development board.  
+> This is the result of compling all files above. It is used when uploading codes to the De1-SoC board.  
