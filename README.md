@@ -10,7 +10,7 @@ Any question? Please contact with [Pengnan](https://github.com/Catosine) and [Gr
 [Lab3 - Finite State Machine](https://github.com/Catosine/ECSE222_Digital_Logics/tree/master/Lab3)  
 
 ## Hardware
-[DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
+[Alteras DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
 ## Updates
 > **<April 4, 2019>** 
