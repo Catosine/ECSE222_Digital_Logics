@@ -136,35 +136,6 @@ begin
 							present_state <= N;
 						end if;
 			end case;
-				
---			case present_state is 
---					when A => temp <= "0001";
---					when B => temp <= "0010";
---					when C => temp <= "0100";
---					when D => temp <= "1000";
---					when E => temp <= "0011";
---					when F => temp <= "0110";
---					when G => temp <= "1100";
---					when H => temp <= "1011";
---					when I => temp <= "0101";
---					when J => temp <= "1010";
---					when K => temp <= "0111";
---					when L => temp <= "1110";
---					when M => temp <= "1111";
---					when N => temp <= "1101";
---					when O => temp <= "1001";
---					when others => temp <= "0000";
---			end case;
---			
---			if temp = "0000" then 
---				if direction = '0' then 
---					present_state <= A;
---					temp <= "0001";
---				else 
---					present_state <= O;
---					temp <= "1001";
---				end if; 
---			end if;
 			
 	end if;
 	
@@ -186,17 +157,7 @@ begin
 					when O => temp <= "1001";
 					when others => temp <= "0000";
 			end case;
-
---			if temp = "0000" then 
---				if direction = '0' then 
---					present_state <= A;
---					temp <= "0001";
---				else 
---					present_state <= O;
---					temp <= "1001";
---				end if; 
---			end if;
---			
+			
 	end process;
 	count <= temp;
 end behaviour;
