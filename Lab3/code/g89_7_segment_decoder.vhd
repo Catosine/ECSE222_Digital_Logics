@@ -27,12 +27,12 @@ begin
       			when "0111" => segments <= "1111000"; 	-- 7 for 7-segment display
       			when "1000" => segments <= "0000000"; 	-- 8 for 7-segment display
       			when "1001" => segments <= "0010000"; 	-- 9 for 7-segment display
-			when "1010" => segments <= "0001000"; 	-- A for 7-segment display
-			when "1011" => segments <= "0000011"; 	-- B for 7-segment display
-			when "1100" => segments <= "1000110"; 	-- C for 7-segment display
-			when "1101" => segments <= "0100001"; 	-- D for 7-segment display
-			when "1110" => segments <= "0000110"; 	-- E for 7-segment display
-			when "1111" => segments <= "0001110"; 	-- F for 7-segment display
+			-- when "1010" => segments <= "0001000"; 	-- A for 7-segment display
+			-- when "1011" => segments <= "0000011"; 	-- B for 7-segment display
+			-- when "1100" => segments <= "1000110"; 	-- C for 7-segment display
+			-- when "1101" => segments <= "0100001"; 	-- D for 7-segment display
+			-- when "1110" => segments <= "0000110"; 	-- E for 7-segment display
+			-- when "1111" => segments <= "0001110"; 	-- F for 7-segment display
       			when others => segments <= "1111111"; 	-- Otherwise
     		end case;
   	end process;
