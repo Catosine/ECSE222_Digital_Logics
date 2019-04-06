@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 -- Declaring the entity of the decoder
 entity g89_7_segment_decoder is
 	Port (	
-		code 		: in 	std_logic_vector(3 downto 0);			-- 4-bit binary input
+		code 		: in 	std_logic_vector(3 downto 0);	-- 4-bit binary input
       		segments 	: out 	std_logic_vector(6 downto 0)	-- 7-bit binary output
 	);
 end g89_7_segment_decoder;
