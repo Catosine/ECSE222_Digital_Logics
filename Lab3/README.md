@@ -13,5 +13,5 @@ This is the folder for finite state machine lab. In this lab, a finite state mac
 > Partial correctness checked. [Testing codes](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab2/g89_clock_divider.vht)  
 
 4. [**__g89_7_segment_decoder.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_7_segment_decoder.vhd)  
-> This is the VHDL file describing 7 segments decoder, which transforms a 4-bit binary signal to a 7-bit binary output. The output signal may be used for 7-segment LEDs on Altera DE1-SoC. __It is basically the same as the one in lab1 but blocking the cases A-F.__  
+> This is the VHDL file describing 7 segments decoder, which transforms a 4-bit binary signal to a 7-bit binary output. The output signal may be used for 7-segment LEDs on Altera DE1-SoC. __It is basically the same as the one in lab1 but the cases A-F are blocked.__  
 > Correctness checked in lab1. [Testing codes](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab1/code/g89_7_segment_decoder.vht)  
