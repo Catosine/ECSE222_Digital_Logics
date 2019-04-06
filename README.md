@@ -13,6 +13,9 @@ Any question? Please contact with [Pengnan](https://github.com/Catosine) and [Gr
 [Alteras DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
 ## Updates
+> **<April 5, 2019>**
+>> Finalize lab3  
+
 > **<April 4, 2019>** 
 >> Create folder for lab3.  
 >> Upload codes for lab3.  
