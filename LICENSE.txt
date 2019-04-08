@@ -1,8 +1,7 @@
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 1, April 2019
 
- Copyright (C) 2019     Pengnan Fan <pengnan.fan@mail.mcgill.ca>
-                        Grace Chen  <siyu.chen@mail.mcgill.ca>
+ Copyright (C) 2019     Pengnan Fan and Grace Chen
 
  Everyone is permitted to copy and distribute verbatim or modified
  copies of this license document, and changing it is allowed as long
