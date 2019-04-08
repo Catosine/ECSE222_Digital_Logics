@@ -8,9 +8,3 @@ This is the folder for codes of 5-bit adder lab. In this lab, a 4-to-7 decoder a
 
 2) [__g89_adder.vhd__  ](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/code/g89_adder.vhd)
 > This is the VHDL file for 5-bit adder, which takes 2 2-digit hexdecimal numbers as input and displays their sum on the 7-segments display.  
-
-3) [__g89_lab1_pin_assignment.csv__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/g89_lab1_pin_assignment.csv)  
-> This is the CSV file that indicates the pin assignment.  
-
-4) [__g89_lab1.sof__](https://github.com/Catosine/ECSE222---VHDL/blob/master/Lab1/g89_lab1.sof)  
-> This is the result of compling all files above. It is used when uploading codes to the DE1-SoC board.  
