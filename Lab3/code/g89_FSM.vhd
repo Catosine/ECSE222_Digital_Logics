@@ -152,10 +152,9 @@ begin
 				end if;
 			end case;
 			
-	end if;
-	
-		
+	end if;		
 	end process;
+		
 	-- Translate the state to binary number. i.e. A -> "0001"
 	count <=	"0001" when present_state = A else 
 			"0010" when present_state = B else 
