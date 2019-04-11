@@ -36,14 +36,13 @@ architecture behaviour of g89_FSM is
 	--	O	:	9
 	-- }
 	signal present_state	: 	State_type;						-- Current state
-	signal temp		:	std_logic_vector (3 downto 0);				-- Used for 7-segment LEDs
 
 begin 
 	process(enable, direction, reset, clk)
 	begin 
 	
 	if (reset = '0') then 					-- Reset FSM when reset is 0
-		present_state <= A;
+		present_state <= A;                             -- Initial state is A
 			
 	elsif (rising_edge(clk) and enable = '1') then		-- FSM opreates at the rising edge of clk and when enable is 1
 		case present_state is 
@@ -155,26 +154,22 @@ begin
 			
 	end if;
 	
-	-- Translate the state to binary number. i.e. A -> "0001"
-	case present_state is 
-		when A => temp <= "0001";
-		when B => temp <= "0010";
-		when C => temp <= "0100";
-		when D => temp <= "1000";
-		when E => temp <= "0011";
-		when F => temp <= "0110";
-		when G => temp <= "1100";
-		when H => temp <= "1011";
-		when I => temp <= "0101";
-		when J => temp <= "1010";
-		when K => temp <= "0111";
-		when L => temp <= "1110";
-		when M => temp <= "1111";
-		when N => temp <= "1101";
-		when O => temp <= "1001";
-		when others => temp <= "0000";
-	end case;
-			
+		
 	end process;
-	count <= temp;
+	-- Translate the state to binary number. i.e. A -> "0001"
+	count <=	"0001" when present_state = A else 
+			"0010" when present_state = B else 
+			"0100" when present_state = C else 
+			"1000" when present_state = D else 
+			"0011" when present_state = E else 
+			"0110" when present_state = F else 
+			"1100" when present_state = G else 
+			"1011" when present_state = H else 
+			"0101" when present_state = I else 
+			"1010" when present_state = J else 
+			"0111" when present_state = K else 
+			"1110" when present_state = L else 
+			"1111" when present_state = M else 
+			"1101" when present_state = N else 
+			"1001" when present_state = O;
 end behaviour;
