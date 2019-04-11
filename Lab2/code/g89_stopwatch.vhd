@@ -165,7 +165,7 @@ if (rising_edge(clk)) then
 	end if;
 	
 	
-	if (reset = '0') then             -- rest the clock when reset button is being pushed 
+	if (reset = '0') then             -- reset the clock when reset button is being pushed 
 		enD_in <= '0';            -- stop all the counters and the divider 
 		enC1 <= '0';                    
 		enC2 <= '0';
