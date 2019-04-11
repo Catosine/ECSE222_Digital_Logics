@@ -22,7 +22,7 @@ if (reset = '0') then 					-- Reset FSM when reset is 0
 			  -- This is the end of the tricky codes --
 ...
 ~~~~
-may make the entity not a FSM, which could be identified by inspecting the RTL diagrams([With the tricky codes](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/RTL/FSM_noSM_RTL.pdf) and [Without the tricky codes](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/RTL/FSM_RTL.pdf)).  
+may make the entity not a FSM, which could be identified by inspecting the RTL diagrams([With the tricky codes](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/RTL/FSM_noSM_RTL.pdf) and [Without the tricky codes](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/RTL/FSM_sm_RTL.pdf)).  
 
 2. [**__g89_multi_mode_counter.vhd__**](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/Lab3/code/g89_multi_mode_counter.vhd)  
 > This VHDL file describes a 2 directional counter that allows both up and down counting. It is used to test the FSM.  
