@@ -42,7 +42,25 @@ begin
 	begin 
 	
 	if (reset = '0') then 					-- Reset FSM when reset is 0
-		present_state <= A;                             -- Initial state is A
+		-- State initialization: direction is 0
+		present_state <= A;
+		
+		-- State initialization: direction is 1
+		-- Notice: adding this part of codes below will make this entity NOT a FSM.
+		
+				  -- This is the start of the tricky codes --
+	        if (direction = '1') then
+			present_state <= O;
+		end if;
+				  -- This is the end of the tricky codes --
+		
+		-----------------------------------------------------------------------------------
+		--                    <<< Why this code is commented out? >>>                    --
+		-----------------------------------------------------------------------------------
+		-- Although this part of codes allows the FSM to initialize at different states  --
+		-- w.r.t. direction signal, Adding it will make this enetity NOT a FSM. This is  --
+		-- noticed by inspecting the RTL diagram, which may be found from in RTL folder  --
+		-----------------------------------------------------------------------------------
 			
 	elsif (rising_edge(clk) and enable = '1') then		-- FSM opreates at the rising edge of clk and when enable is 1
 		case present_state is 
