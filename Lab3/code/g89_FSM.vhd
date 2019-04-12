@@ -55,7 +55,7 @@ begin
 				  -- This is the end of the tricky codes --
 		
 		-----------------------------------------------------------------------------------
-		--                    <<< Why this code is commented out? >>>                    --
+		--                        <<< Why this code is tricky? >>>                       --
 		-----------------------------------------------------------------------------------
 		-- Although this part of codes allows the FSM to initialize at different states  --
 		-- w.r.t. direction signal, Adding it will make this enetity NOT a FSM. This is  --
