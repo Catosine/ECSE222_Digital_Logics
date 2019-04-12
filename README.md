@@ -12,6 +12,9 @@ Any question? Please contact with [Pengnan](https://github.com/Catosine) and [Gr
 ## Hardware
 [Alteras DE1-SoC 5CSEMA5F31C6](https://github.com/Catosine/ECSE222_Digital_Logics/blob/master/DE1-SoC_User_manual.pdf)
 
+## Software
+[Intel Quartus 18.0](https://www.intel.ca/content/www/ca/en/software/programmable/quartus-prime/overview.html) and [modelSim](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/model-sim.html)  
+
 ## Updates
 > **<April 12, 2019>**
 >> Finalize lab3 and release [v1.1](https://github.com/Catosine/ECSE222_Digital_Logics/releases/tag/v1.1)  
